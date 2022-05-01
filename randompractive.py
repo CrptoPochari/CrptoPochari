@@ -1,6 +1,16 @@
 import random
 
-r = random.randint(1,100)
+start = 1
+end = 1
+
+while start >= end:
+	print("Enter your range:")
+	start = int(input("Start= "))
+	end = int(input("End= "))
+	print("Start should be smaller than End\n")
+print("your Start=", start ,", End=", end ,".\n")
+r = random.randint(start,end)
+
 count = 0
 while True:
 	count += 1
