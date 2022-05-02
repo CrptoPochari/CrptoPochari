@@ -5,7 +5,7 @@ while True:
 	#跳出: name= q不是商品
 	if name == 'q':
 		break
-	price = input('Please enter product price:')	
+	price = int(input('Please enter product price:'))	
 	
 	#product.append(name)
 	product = []
@@ -26,4 +26,4 @@ for product in products:
 #it doesn't matter if we have products.txt, because we use write
 with open('products.csv',"w") as f:
 	for product in products:
-		f.write(product[0] + ", " + product[1] + "\n")
+		f.write(product[0] + ", " + str(product[1]) + "\n")
