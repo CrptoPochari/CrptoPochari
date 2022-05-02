@@ -22,3 +22,8 @@ while True:
 
 for product in products:
 	print("Product: ",product[0],"'s Price= ", product[1])
+
+#it doesn't matter if we have products.txt, because we use write
+with open('products.csv',"w") as f:
+	for product in products:
+		f.write(product[0] + ", " + product[1] + "\n")
