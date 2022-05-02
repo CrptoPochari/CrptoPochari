@@ -23,7 +23,9 @@ while True:
 for product in products:
 	print("Product: ",product[0],"'s Price= ", product[1])
 
-#it doesn't matter if we have products.txt, because we use write
-with open('products.csv',"w") as f:
+#it doesn't matter if we have products.csv, because we use write
+#encoding ways is important
+with open('products.csv', "w", encoding="1252") as f:
+	f.write("商品,價格\n")
 	for product in products:
 		f.write(product[0] + ", " + str(product[1]) + "\n")
