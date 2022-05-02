@@ -1,16 +1,21 @@
+import os  # operating system
 products = []
 
 #Part 1: Read Old csv
-#encoding="utf-8" could read the file.
-with open("products.csv", "r", encoding="utf-8") as file:
-	for line in file:
-		if "商品,價格" in line:
-			continue
-		#delete "\n", then split with ",""
-		name, price = line.strip().split(",")
-		products.append([name,price])
+if os.path.isfile('products.csv'): # related path
+	print("Yes, we have products.csv under this path.")
+	#encoding="utf-8" could read the file.
+	with open("products.csv", "r", encoding="utf-8") as file:
+		for line in file:
+			if "商品,價格" in line:
+				continue
+			#delete "\n", then split with ",""
+			name, price = line.strip().split(",")
+			products.append([name,price])
+	print(products)
+else:
+	print("No, we dont' have products.csv under this path.")
 
-print(products)
 
 #Part 2: Let user input
 while True:
@@ -23,15 +28,6 @@ while True:
 	
 	#product.append(name)
 	product = []
-	"""
-	#1
-	#	product.append(name)
-	#	product.append(price)
-	#2
-	#	product = [name,price]
-	#	products.append(product)
-	"""
-	#3
 	products.append([name,price])
 
 #Part 3: Print all purchase record
