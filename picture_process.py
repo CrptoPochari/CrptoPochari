@@ -3,7 +3,7 @@ import os
 # os is a module, not a package Properly speaking
 # every thing could use .fuction is an "object"
 
-
+# for f in os.listdir("."): # . means current path 
 for f in os.listdir("orig"): # . means current path 
     if f.endswith(".jpg"):
         # f is name
